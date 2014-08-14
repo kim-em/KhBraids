@@ -1,0 +1,364 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     12567,        355]
+NotebookOptionsPosition[     11693,        324]
+NotebookOutlinePosition[     12051,        340]
+CellTagsIndexPosition[     12008,        337]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["TODO", "Subsection",
+ CellChangeTimes->{{3.611446342808716*^9, 3.6114463593375893`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Done?", "Subsection",
+ CellChangeTimes->{{3.611446351916304*^9, 3.611446353610729*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"NumberOfCrossings", "[", "b_BR", "]"}], ":=", 
+  RowBox[{"Length", "[", 
+   RowBox[{"SignsOfCrossings", "[", "b", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.611446663579193*^9, 3.6114466892021093`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SignsOfCrossings", "[", "b_BR", "]"}], ":=", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"return", " ", "a", " ", "list", " ", "of"}], " ", "+", 
+     RowBox[{"1", " ", "and"}], " ", "-", 
+     RowBox[{"1", "s"}]}], ",", " ", 
+    RowBox[{
+    "indicating", " ", "the", " ", "signs", " ", "of", " ", "the", " ", 
+     "crossings"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"Sign", "/@", 
+   RowBox[{"(", 
+    RowBox[{"b", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+    ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.61144636047263*^9, 3.611446378288164*^9}, {
+  3.6114466927484922`*^9, 3.6114467027587023`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"BasisVectors", "[", "r_Resolution", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"numberOfCircles", "=", 
+      RowBox[{"Length", "[", 
+       RowBox[{"r", "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}], 
+       "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"BasisVector", "[", 
+       RowBox[{"r", ",", 
+        RowBox[{"Thread", "[", 
+         RowBox[{
+          RowBox[{"r", "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}],
+           "\[Rule]", "#"}], "]"}]}], "]"}], "&"}], "/@", 
+     RowBox[{"Tuples", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", 
+         RowBox[{"+", "1"}]}], "}"}], ",", "numberOfCircles"}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.611446168225869*^9, 3.611446222066526*^9}, {
+  3.6114573723074827`*^9, 3.61145738284443*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"HomologicalGrading", "[", "b_BasisVector", "]"}], ":=", 
+  RowBox[{"HomologicalGrading", "[", 
+   RowBox[{"b", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.611446145739091*^9, 3.611446153018635*^9}, {
+  3.61144623414736*^9, 3.6114463352799807`*^9}, {3.611446434477512*^9, 
+  3.611446436148571*^9}, {3.6114489827941103`*^9, 3.611449000663706*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"HomologicalGrading", "[", "r_Resolution", "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "0", " ", "resolutions", " ", "contribute", " ", "0", " ", "to", " ", 
+    "the", " ", "homological", " ", "grading"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"1", " ", "resolutions", " ", "contribute"}], " ", "+", 
+     RowBox[{
+      RowBox[{"/", 
+       RowBox[{"-", " ", "1"}]}], " ", "to", " ", "the", " ", "homological", 
+      " ", "grading"}]}], ",", " ", 
+    RowBox[{
+    "depending", " ", "on", " ", "the", " ", "sign", " ", "of", " ", "the", 
+     " ", "crossing"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"SignsOfCrossings", "[", 
+    RowBox[{"r", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+    "]"}], ".", 
+   RowBox[{
+   "r", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}]}]], "Input",
+ CellChangeTimes->{{3.6114489735261717`*^9, 3.611448993095283*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EulerGrading", "[", "b_BasisVector", "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"0", " ", "resolutions", " ", "of"}], " ", "+", 
+    RowBox[{"ve", " ", "crossings", " ", "give"}], " ", "+", "1"}], " ", 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"1", " ", "resolutions", " ", "of"}], " ", "+", 
+    RowBox[{"ve", " ", "crossings", " ", "give"}], " ", "+", "2"}], " ", 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"0", " ", "resolutions", " ", "of"}], " ", "-", 
+    RowBox[{"ve", " ", "crossings", " ", "give"}], " ", "-", "1"}], " ", 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"1", " ", "resolutions", " ", "of"}], " ", "-", 
+    RowBox[{"ve", " ", "crossings", " ", "give"}], " ", "-", "2"}], " ", 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"SignsOfCrossings", "[", 
+     RowBox[{"b", "\[LeftDoubleBracket]", 
+      RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}], "]"}], ".", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"b", "\[LeftDoubleBracket]", 
+       RowBox[{"1", ",", "2"}], "\[RightDoubleBracket]"}], "+", "1"}], 
+     ")"}]}], "+", 
+   RowBox[{"(", 
+    RowBox[{"Plus", "@@", 
+     RowBox[{"b", "\[LeftDoubleBracket]", 
+      RowBox[{"2", ",", "All", ",", "2"}], "\[RightDoubleBracket]"}]}], 
+    ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.61144642264258*^9, 3.611446481633971*^9}, {
+  3.611446564557*^9, 3.6114466304453363`*^9}, {3.611448943841776*^9, 
+  3.611448960036504*^9}, {3.611457350538477*^9, 3.611457351977372*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"AllHomologicalGradings", "[", "b_BR", "]"}], ":=", 
+  RowBox[{"Union", "[", 
+   RowBox[{"HomologicalGrading", "/@", 
+    RowBox[{"CubeOfResolutions", "[", "b", "]"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AllEulerGradings", "[", "b_BR", "]"}], ":=", 
+  RowBox[{"Union", "[", 
+   RowBox[{"EulerGrading", "/@", 
+    RowBox[{"AllBasisVectors", "[", "b", "]"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.611449009707911*^9, 3.611449059583516*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Differential", "[", "b_BasisVector", "]"}], ":=", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"DifferentialForCrossing", "[", "k", "]"}], "[", "b", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "1", ",", 
+      RowBox[{"NumberOfCrossings", "[", 
+       RowBox[{"b", "\[LeftDoubleBracket]", 
+        RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}], "]"}]}], "}"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.611446645380761*^9, 3.61144665166315*^9}, {
+  3.611446717000251*^9, 3.611446739794592*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"AllBasisVectors", "[", "b_BR", "]"}], ":=", 
+  RowBox[{"Flatten", "[", 
+   RowBox[{"BasisVectors", "/@", 
+    RowBox[{"CubeOfResolutions", "[", "b", "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.611446806434662*^9, 3.6114468251814623`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"AllBasisVectorsInGrading", "[", 
+   RowBox[{"b_BR", ",", "s_Integer", ",", "r_Integer"}], "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"For", " ", "now"}], ",", " ", 
+    RowBox[{"we", " ", "do", " ", "this", " ", "inefficiently"}], ",", " ", 
+    RowBox[{
+    "producing", " ", "_all", "_", " ", "basis", " ", "vectors", " ", "and", 
+     " ", 
+     RowBox[{"filtering", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"Cases", "[", 
+   RowBox[{
+    RowBox[{"AllBasisVectors", "[", "b", "]"}], ",", 
+    RowBox[{"v_", "/;", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HomologicalGrading", "[", "v", "]"}], "\[Equal]", "s"}], 
+      "\[And]", 
+      RowBox[{
+       RowBox[{"EulerGrading", "[", "v", "]"}], "\[Equal]", "r"}]}]}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.611446743648716*^9, 3.611446850336823*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DifferentialAsMatrix", "[", 
+   RowBox[{"b_BR", ",", "s_Integer", ",", "r_Integer"}], "]"}], ":=", 
+  RowBox[{"Normal", "[", 
+   RowBox[{
+    RowBox[{"CoefficientArrays", "[", 
+     RowBox[{
+      RowBox[{"Differential", "/@", 
+       RowBox[{"AllBasisVectorsInGrading", "[", 
+        RowBox[{"b", ",", "s", ",", "r"}], "]"}]}], ",", 
+      RowBox[{"AllBasisVectorsInGrading", "[", 
+       RowBox[{"b", ",", 
+        RowBox[{"s", "+", "1"}], ",", "r"}], "]"}]}], "]"}], 
+    "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], "]"}]}]], "Input",\
+
+ CellChangeTimes->{{3.611446851773861*^9, 3.611446875916087*^9}, {
+  3.6114469079289722`*^9, 3.6114469685276403`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"KhRepresentativesInGrading", "[", 
+   RowBox[{"b_BR", ",", "s_Integer", ",", "r_Integer"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"kernel", ",", " ", "image", ",", "complementInKernelBasis"}], 
+     "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"kernel", "=", 
+      RowBox[{"NullSpace", "[", 
+       RowBox[{"DifferentialAsMatrix", "[", 
+        RowBox[{"b", ",", "s", ",", "r"}], "]"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "the", " ", "_columns", "_", " ", "of", " ", "the", " ", "differential",
+        " ", "span", " ", "the", " ", "image"}], "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"image", "=", 
+      RowBox[{"Transpose", "[", 
+       RowBox[{"DifferentialAsMatrix", "[", 
+        RowBox[{"b", ",", 
+         RowBox[{"s", "-", "1"}], ",", "r"}], "]"}], "]"}]}], ";", " ", 
+     "\[IndentingNewLine]", 
+     RowBox[{"complementInKernelBasis", "=", 
+      RowBox[{"NullSpace", "[", 
+       RowBox[{"Transpose", "[", 
+        RowBox[{"LinearSolve", "[", 
+         RowBox[{
+          RowBox[{"Transpose", "[", "kernel", "]"}], ",", " ", 
+          RowBox[{"Transpose", "[", "image", "]"}]}], "]"}], "]"}], "]"}]}], 
+     ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "[", "complementInKernelBasis", "]"}], "\[Equal]", 
+        "0"}], ",", 
+       RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"complementInKernelBasis", ".", "kernel"}]}], 
+      "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.611446972443158*^9, 3.611446983289302*^9}, {
+  3.611447096784577*^9, 3.611447253583685*^9}, {3.611448727254511*^9, 
+  3.611448727471444*^9}, {3.611448763822133*^9, 3.61144878999037*^9}, {
+  3.611448836612405*^9, 3.6114488475029097`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"KhInGrading", "[", 
+   RowBox[{"b_BR", ",", "s_Integer", ",", "r_Integer"}], "]"}], ":=", 
+  RowBox[{"Length", "[", 
+   RowBox[{"KhRepresentativesInGrading", "[", 
+    RowBox[{"b", ",", "s", ",", "r"}], "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.611448855993891*^9, 3.611448871583955*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Kh", "[", "b_BR", "]"}], ":=", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["t", "s"], 
+     SuperscriptBox["q", "r"], 
+     RowBox[{"KhInGrading", "[", 
+      RowBox[{"b", ",", "s", ",", "r"}], "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"s", ",", 
+      RowBox[{"AllHomologicalGradings", "[", "b", "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"r", ",", 
+      RowBox[{"AllEulerGradings", "[", "b", "]"}]}], "}"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.611448873459649*^9, 3.611448877278904*^9}, {
+  3.611449065031947*^9, 3.611449113070578*^9}}]
+}, Open  ]]
+},
+WindowSize->{1305, 970},
+WindowMargins->{{Automatic, 518}, {Automatic, 60}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 94, 1, 44, "Subsection"],
+Cell[CellGroupData[{
+Cell[676, 25, 93, 1, 36, "Subsection"],
+Cell[772, 28, 242, 5, 28, "Input"],
+Cell[1017, 35, 682, 17, 46, "Input"],
+Cell[1702, 54, 967, 26, 63, "Input"],
+Cell[2672, 82, 437, 8, 28, "Input"],
+Cell[3112, 92, 1029, 26, 80, "Input"],
+Cell[4144, 120, 1663, 41, 114, "Input"],
+Cell[5810, 163, 503, 12, 46, "Input"],
+Cell[6316, 177, 566, 14, 28, "Input"],
+Cell[6885, 193, 279, 6, 28, "Input"],
+Cell[7167, 201, 908, 24, 63, "Input"],
+Cell[8078, 227, 705, 17, 46, "Input"],
+Cell[8786, 246, 1932, 46, 165, "Input"],
+Cell[10721, 294, 329, 7, 28, "Input"],
+Cell[11053, 303, 624, 18, 35, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
