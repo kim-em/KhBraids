@@ -1,0 +1,265 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      8469,        256]
+NotebookOptionsPosition[      8099,        239]
+NotebookOutlinePosition[      8456,        255]
+CellTagsIndexPosition[      8413,        252]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{"This", " ", "code", " ", "depends", " ", "on", " ", 
+   RowBox[{"KhBraids", ".", "nb"}]}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.6183484637348127`*^9, 3.6183485121843777`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Still", "[", 
+   RowBox[{
+    RowBox[{"BraidMovie", "[", 
+     RowBox[{"b_", ",", "_"}], "]"}], ",", "0"}], "]"}], ":=", 
+  "b"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Still", "[", 
+   RowBox[{
+    RowBox[{"BraidMovie", "[", 
+     RowBox[{"b_", ",", 
+      RowBox[{"{", 
+       RowBox[{"X_", ",", "___"}], "}"}]}], "]"}], ",", "1"}], "]"}], ":=", 
+  RowBox[{"Still", "[", 
+   RowBox[{
+    RowBox[{"BraidMovie", "[", 
+     RowBox[{"b", ",", 
+      RowBox[{"{", "X", "}"}]}], "]"}], ",", "1"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Still", "[", 
+   RowBox[{
+    RowBox[{"BraidMovie", "[", 
+     RowBox[{"b_", ",", 
+      RowBox[{"{", 
+       RowBox[{"X_", ",", "Y__"}], "}"}]}], "]"}], ",", 
+    RowBox[{"k_", "/;", 
+     RowBox[{"k", ">", "1"}]}]}], "]"}], ":=", 
+  RowBox[{"Still", "[", 
+   RowBox[{
+    RowBox[{"BraidMovie", "[", 
+     RowBox[{
+      RowBox[{"Still", "[", 
+       RowBox[{
+        RowBox[{"BraidMovie", "[", 
+         RowBox[{"b", ",", 
+          RowBox[{"{", "X", "}"}]}], "]"}], ",", "1"}], "]"}], ",", 
+      RowBox[{"{", "Y", "}"}]}], "]"}], ",", 
+    RowBox[{"k", "-", "1"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.618022307303009*^9, 3.618022339127675*^9}, {
+  3.6180223729471292`*^9, 3.618022448442018*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Still", "[", 
+   RowBox[{"b_BraidMovie", ",", 
+    RowBox[{"k_", "/;", 
+     RowBox[{"k", "<", "0"}]}]}], "]"}], ":=", 
+  RowBox[{"Still", "[", 
+   RowBox[{"b", ",", 
+    RowBox[{
+     RowBox[{"Length", "[", 
+      RowBox[{"b", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+      "]"}], "+", "1", "+", "k"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.618305046419405*^9, 3.61830511343119*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"the", " ", "inductive", " ", "step"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", "R1", " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Still", "[", 
+      RowBox[{
+       RowBox[{"BraidMovie", "[", 
+        RowBox[{
+         RowBox[{"BR", "[", 
+          RowBox[{"n_", ",", "As_List"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"R1", "[", 
+           RowBox[{"1", ",", "generator_"}], "]"}], "}"}]}], "]"}], ",", 
+       "1"}], "]"}], "/;", 
+     RowBox[{
+      RowBox[{"Abs", "[", "generator", "]"}], "\[Equal]", "n"}]}], ":=", 
+    RowBox[{"BR", "[", 
+     RowBox[{
+      RowBox[{"n", "+", "1"}], ",", 
+      RowBox[{"Append", "[", 
+       RowBox[{"As", ",", "generator"}], "]"}]}], "]"}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Still", "[", 
+      RowBox[{
+       RowBox[{"BraidMovie", "[", 
+        RowBox[{
+         RowBox[{"BR", "[", 
+          RowBox[{"n_", ",", "As_List"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"R1", "[", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", "generator_"}], "]"}], "}"}]}], "]"}], 
+       ",", "1"}], "]"}], "/;", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"As", "\[LeftDoubleBracket]", 
+        RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "\[Equal]", 
+       "generator"}], "\[And]", 
+      RowBox[{
+       RowBox[{"Max", "[", 
+        RowBox[{"Abs", "[", 
+         RowBox[{"Most", "[", "As", "]"}], "]"}], "]"}], "<", 
+       RowBox[{"n", "-", "1"}]}]}]}], ":=", 
+    RowBox[{"BR", "[", 
+     RowBox[{
+      RowBox[{"n", "-", "1"}], ",", 
+      RowBox[{"Most", "[", "As", "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", "R2", " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Still", "[", 
+     RowBox[{
+      RowBox[{"BraidMovie", "[", 
+       RowBox[{"BR", "[", 
+        RowBox[{"n_", ",", "As_List", ",", 
+         RowBox[{"{", 
+          RowBox[{"R2", "[", 
+           RowBox[{"offset_Integer", ",", "1", ",", "generator_Integer"}], 
+           "]"}], "}"}]}], "]"}], "]"}], ",", "1"}], "]"}], ":=", 
+    RowBox[{"BR", "[", 
+     RowBox[{"n", ",", 
+      RowBox[{
+       RowBox[{"Take", "[", 
+        RowBox[{"As", ",", "offset"}], "]"}], "~", "Join", "~", 
+       RowBox[{"{", 
+        RowBox[{"generator", ",", 
+         RowBox[{"-", "generator"}]}], "}"}], "~", "Join", "~", 
+       RowBox[{"Drop", "[", 
+        RowBox[{"As", ",", "offset"}], "]"}]}]}], "]"}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Still", "[", 
+      RowBox[{
+       RowBox[{"BraidMovie", "[", 
+        RowBox[{"BR", "[", 
+         RowBox[{"n_", ",", "As_List", ",", 
+          RowBox[{"{", 
+           RowBox[{"R2", "[", 
+            RowBox[{"offset_Integer", ",", 
+             RowBox[{"-", "1"}], ",", "generator_Integer"}], "]"}], "}"}]}], 
+         "]"}], "]"}], ",", "1"}], "]"}], "/;", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"As", "\[LeftDoubleBracket]", 
+        RowBox[{"offset", "+", "1"}], "\[RightDoubleBracket]"}], "\[Equal]", 
+       "generator"}], "\[And]", 
+      RowBox[{
+       RowBox[{"As", "\[LeftDoubleBracket]", 
+        RowBox[{"offest", "+", "2"}], "\[RightDoubleBracket]"}], "\[Equal]", 
+       RowBox[{"-", "generator"}]}]}]}], ":=", 
+    RowBox[{"BR", "[", 
+     RowBox[{"n", ",", 
+      RowBox[{"Drop", "[", 
+       RowBox[{"As", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"offset", "+", "1"}], ",", 
+          RowBox[{"offset", "+", "2"}]}], "}"}]}], "]"}]}], "]"}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", "R3", " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Still", "[", 
+     RowBox[{
+      RowBox[{"BraidMovie", "[", 
+       RowBox[{
+        RowBox[{"BR", "[", 
+         RowBox[{"n_", ",", "As_List"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"R3", "[", "offset_Integer", "]"}], "}"}]}], "]"}], ",", 
+      "1"}], "]"}], ":=", 
+    RowBox[{"BR", "[", 
+     RowBox[{"b", ",", 
+      RowBox[{
+       RowBox[{"Take", "[", 
+        RowBox[{"As", ",", "offset"}], "]"}], "~", "Join", "~", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"As", "\[LeftDoubleBracket]", 
+          RowBox[{"offset", "+", "2"}], "\[RightDoubleBracket]"}], ",", 
+         RowBox[{"As", "\[LeftDoubleBracket]", 
+          RowBox[{"offset", "+", "1"}], "\[RightDoubleBracket]"}], ",", 
+         RowBox[{"As", "\[LeftDoubleBracket]", 
+          RowBox[{"offset", "+", "2"}], "\[RightDoubleBracket]"}]}], "}"}], 
+       "~", "Join", "~", 
+       RowBox[{"Drop", "[", 
+        RowBox[{"As", ",", 
+         RowBox[{"offset", "+", "3"}]}], "]"}]}]}], "]"}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", "Cycle", " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Still", "[", 
+     RowBox[{
+      RowBox[{"BraidMovie", "[", 
+       RowBox[{
+        RowBox[{"BR", "[", 
+         RowBox[{"n_", ",", "As_List"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"Cycle", "[", "k_Integer", "]"}], "}"}]}], "]"}], ",", "1"}],
+      "]"}], ":=", 
+    RowBox[{"BR", "[", 
+     RowBox[{"n", ",", 
+      RowBox[{"RotateLeft", "[", 
+       RowBox[{"As", ",", "k"}], "]"}]}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.618022456644177*^9, 3.618022650158018*^9}, {
+  3.618022896853236*^9, 3.6180229609056473`*^9}, {3.618022992917028*^9, 
+  3.618023057517315*^9}, {3.618023351063921*^9, 3.618023381987616*^9}, {
+  3.618023415470525*^9, 3.618023591514936*^9}, {3.618023640394375*^9, 
+  3.6180236746689262`*^9}}]
+},
+WindowSize->{961, 621},
+WindowMargins->{{206, Automatic}, {79, Automatic}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 229, 4, 28, "Input"],
+Cell[789, 26, 1302, 41, 63, "Input"],
+Cell[2094, 69, 440, 12, 28, "Input"],
+Cell[2537, 83, 5558, 154, 284, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

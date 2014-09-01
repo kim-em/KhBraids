@@ -1,0 +1,187 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      6184,        178]
+NotebookOptionsPosition[      5703,        158]
+NotebookOutlinePosition[      6059,        174]
+CellTagsIndexPosition[      6016,        171]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{"This", " ", "code", " ", "depends", " ", "on", " ", 
+    RowBox[{"KhBraids", ".", "nb"}]}], ",", " ", 
+   RowBox[{"BraidMovie", ".", "nb"}], ",", " ", 
+   RowBox[{"and", " ", 
+    RowBox[{"Still", ".", "nb"}]}]}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.6183484637348127`*^9, 3.61834848913274*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"VerifyMoviePreservesGradings", "[", 
+   RowBox[{"m_BraidMovie", ",", "v_BasisVector"}], "]"}], ":=", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Bigrading", "[", "v", "]"}], "=!=", 
+     RowBox[{"Bigrading", "[", 
+      RowBox[{
+       RowBox[{"KhC", "[", "m", "]"}], "[", "v", "]"}], "]"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Print", "[", 
+      RowBox[{
+      "\"\<Movie \>\"", ",", "m", ",", 
+       "\"\< did not preserve the bigrading of \>\"", ",", "v"}], "]"}], ";", 
+     
+     RowBox[{"Abort", "[", "]"}]}], ",", "True"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.618347784590694*^9, 3.618347835617787*^9}, {
+   3.618347930541794*^9, 3.6183479671579847`*^9}, 3.618348623840481*^9, {
+   3.618348698007965*^9, 3.6183486998664093`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"VerifyMoviePreservesGradings", "[", 
+   RowBox[{"m_BraidMovie", ",", "s_Integer", ",", " ", "r_Integer"}], "]"}], ":=", 
+  RowBox[{"And", "@@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"VerifyMoviePreservesGradings", "[", 
+       RowBox[{"m", ",", "#"}], "]"}], "&"}], "/@", 
+     RowBox[{"AllBasisVectorsInGrading", "[", 
+      RowBox[{
+       RowBox[{"Still", "[", 
+        RowBox[{"m", ",", "0"}], "]"}], ",", "s", ",", "r"}], "]"}]}], 
+    ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.618347969289575*^9, 3.618347983652267*^9}, {
+   3.6183481161885557`*^9, 3.61834815016518*^9}, 3.6183486228557568`*^9, {
+   3.618348702854714*^9, 3.618348710910729*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"VerifyMoviePreservesGradings", "[", "m_BraidMovie", "]"}], ":=", 
+  RowBox[{"And", "@@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"VerifyMoviePreservesGradings", "[", 
+       RowBox[{"m", ",", 
+        RowBox[{"#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+        ",", 
+        RowBox[{"#", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}],
+        "]"}], "&"}], "/@", 
+     RowBox[{"AllBigradings", "[", 
+      RowBox[{"Still", "[", 
+       RowBox[{"m", ",", "0"}], "]"}], "]"}]}], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.618348152434664*^9, 3.6183481907771063`*^9}, 
+   3.6183486218708353`*^9, {3.6183487137980556`*^9, 3.618348719446186*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"VerifyMovieChainMapCondition", "[", 
+   RowBox[{"m_BraidMovie", ",", "v_BasisVector"}], "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"KhC", "[", "m", "]"}], "[", 
+      RowBox[{"Differential", "[", "v", "]"}], "]"}], "=!=", 
+     RowBox[{"Differential", "[", 
+      RowBox[{
+       RowBox[{"KhC", "[", "m", "]"}], "[", "v", "]"}], "]"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Print", "[", 
+      RowBox[{
+      "\"\<Movie \>\"", ",", "m", ",", 
+       "\"\< does not satisfy the chain map condition at \>\"", ",", "v"}], 
+      "]"}], ";", 
+     RowBox[{"Abort", "[", "]"}]}], ",", "True"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.618348193280785*^9, 3.618348214420783*^9}, {
+   3.618348277473052*^9, 3.618348333718093*^9}, {3.618348374224696*^9, 
+   3.618348382929974*^9}, 3.618348620009107*^9, {3.618348722598658*^9, 
+   3.618348724172851*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"VerifyMovieChainMapCondition", "[", 
+   RowBox[{"m_BraidMovie", ",", "s_Integer", ",", " ", "r_Integer"}], "]"}], ":=", 
+  RowBox[{"And", "@@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"VerifyMovieChainMapCondition", "[", 
+       RowBox[{"m", ",", "#"}], "]"}], "&"}], "/@", 
+     RowBox[{"AllBasisVectorsInGrading", "[", 
+      RowBox[{
+       RowBox[{"Still", "[", 
+        RowBox[{"m", ",", "0"}], "]"}], ",", "s", ",", "r"}], "]"}]}], 
+    ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.618347969289575*^9, 3.618347983652267*^9}, {
+   3.6183481161885557`*^9, 3.61834815016518*^9}, {3.6183484235545673`*^9, 
+   3.618348425083539*^9}, 3.618348618487114*^9, {3.618348726413344*^9, 
+   3.618348731069818*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"VerifyMovieChainMapCondition", "[", "m_BraidMovie", "]"}], ":=", 
+  RowBox[{"And", "@@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"VerifyMovieChainMapCondition", "[", 
+       RowBox[{"m", ",", 
+        RowBox[{"#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+        ",", 
+        RowBox[{"#", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}],
+        "]"}], "&"}], "/@", 
+     RowBox[{"AllBigradings", "[", 
+      RowBox[{"Still", "[", 
+       RowBox[{"m", ",", "0"}], "]"}], "]"}]}], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.618348152434664*^9, 3.6183481907771063`*^9}, {
+   3.6183484276660233`*^9, 3.618348429006956*^9}, 3.618348617553705*^9, {
+   3.618348734299389*^9, 3.618348737405087*^9}}]
+},
+WindowSize->{740, 867},
+WindowMargins->{{12, Automatic}, {Automatic, 24}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 361, 8, 28, "Input"],
+Cell[921, 30, 823, 21, 63, "Input"],
+Cell[1747, 53, 708, 17, 80, "Input"],
+Cell[2458, 72, 724, 17, 63, "Input"],
+Cell[3185, 91, 978, 25, 80, "Input"],
+Cell[4166, 118, 758, 18, 80, "Input"],
+Cell[4927, 138, 772, 18, 63, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
