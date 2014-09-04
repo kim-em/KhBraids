@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      8469,        256]
-NotebookOptionsPosition[      8099,        239]
-NotebookOutlinePosition[      8456,        255]
-CellTagsIndexPosition[      8413,        252]
+NotebookDataLength[      8547,        258]
+NotebookOptionsPosition[      8177,        241]
+NotebookOutlinePosition[      8534,        257]
+CellTagsIndexPosition[      8491,        254]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -140,12 +140,13 @@ Cell[BoxData[
     RowBox[{"Still", "[", 
      RowBox[{
       RowBox[{"BraidMovie", "[", 
-       RowBox[{"BR", "[", 
-        RowBox[{"n_", ",", "As_List", ",", 
-         RowBox[{"{", 
-          RowBox[{"R2", "[", 
-           RowBox[{"offset_Integer", ",", "1", ",", "generator_Integer"}], 
-           "]"}], "}"}]}], "]"}], "]"}], ",", "1"}], "]"}], ":=", 
+       RowBox[{
+        RowBox[{"BR", "[", 
+         RowBox[{"n_", ",", "As_List"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"R2", "[", 
+          RowBox[{"offset_Integer", ",", "1", ",", "generator_Integer"}], 
+          "]"}], "}"}]}], "]"}], ",", "1"}], "]"}], ":=", 
     RowBox[{"BR", "[", 
      RowBox[{"n", ",", 
       RowBox[{
@@ -162,13 +163,14 @@ Cell[BoxData[
      RowBox[{"Still", "[", 
       RowBox[{
        RowBox[{"BraidMovie", "[", 
-        RowBox[{"BR", "[", 
-         RowBox[{"n_", ",", "As_List", ",", 
-          RowBox[{"{", 
-           RowBox[{"R2", "[", 
-            RowBox[{"offset_Integer", ",", 
-             RowBox[{"-", "1"}], ",", "generator_Integer"}], "]"}], "}"}]}], 
-         "]"}], "]"}], ",", "1"}], "]"}], "/;", 
+        RowBox[{
+         RowBox[{"BR", "[", 
+          RowBox[{"n_", ",", "As_List"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"R2", "[", 
+           RowBox[{"offset_Integer", ",", 
+            RowBox[{"-", "1"}], ",", "generator_Integer"}], "]"}], "}"}]}], 
+        "]"}], ",", "1"}], "]"}], "/;", 
      RowBox[{
       RowBox[{
        RowBox[{"As", "\[LeftDoubleBracket]", 
@@ -235,7 +237,7 @@ Cell[BoxData[
   3.618022896853236*^9, 3.6180229609056473`*^9}, {3.618022992917028*^9, 
   3.618023057517315*^9}, {3.618023351063921*^9, 3.618023381987616*^9}, {
   3.618023415470525*^9, 3.618023591514936*^9}, {3.618023640394375*^9, 
-  3.6180236746689262`*^9}}]
+  3.6180236746689262`*^9}, {3.618626359811254*^9, 3.618626366227034*^9}}]
 },
 WindowSize->{961, 621},
 WindowMargins->{{206, Automatic}, {79, Automatic}},
@@ -257,7 +259,7 @@ Notebook[{
 Cell[557, 20, 229, 4, 28, "Input"],
 Cell[789, 26, 1302, 41, 63, "Input"],
 Cell[2094, 69, 440, 12, 28, "Input"],
-Cell[2537, 83, 5558, 154, 284, "Input"]
+Cell[2537, 83, 5636, 156, 284, "Input"]
 }
 ]
 *)
