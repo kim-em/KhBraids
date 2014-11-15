@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      8547,        258]
-NotebookOptionsPosition[      8177,        241]
-NotebookOutlinePosition[      8534,        257]
-CellTagsIndexPosition[      8491,        254]
+NotebookDataLength[      8595,        259]
+NotebookOptionsPosition[      8226,        242]
+NotebookOutlinePosition[      8582,        258]
+CellTagsIndexPosition[      8539,        255]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -178,7 +178,7 @@ Cell[BoxData[
        "generator"}], "\[And]", 
       RowBox[{
        RowBox[{"As", "\[LeftDoubleBracket]", 
-        RowBox[{"offest", "+", "2"}], "\[RightDoubleBracket]"}], "\[Equal]", 
+        RowBox[{"offset", "+", "2"}], "\[RightDoubleBracket]"}], "\[Equal]", 
        RowBox[{"-", "generator"}]}]}]}], ":=", 
     RowBox[{"BR", "[", 
      RowBox[{"n", ",", 
@@ -237,10 +237,11 @@ Cell[BoxData[
   3.618022896853236*^9, 3.6180229609056473`*^9}, {3.618022992917028*^9, 
   3.618023057517315*^9}, {3.618023351063921*^9, 3.618023381987616*^9}, {
   3.618023415470525*^9, 3.618023591514936*^9}, {3.618023640394375*^9, 
-  3.6180236746689262`*^9}, {3.618626359811254*^9, 3.618626366227034*^9}}]
+  3.6180236746689262`*^9}, {3.618626359811254*^9, 3.618626366227034*^9}, {
+  3.624382517333415*^9, 3.624382518363123*^9}}]
 },
 WindowSize->{961, 621},
-WindowMargins->{{206, Automatic}, {79, Automatic}},
+WindowMargins->{{-19, Automatic}, {Automatic, 0}},
 FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
 2013)",
 StyleDefinitions->"Default.nb"
@@ -259,7 +260,7 @@ Notebook[{
 Cell[557, 20, 229, 4, 28, "Input"],
 Cell[789, 26, 1302, 41, 63, "Input"],
 Cell[2094, 69, 440, 12, 28, "Input"],
-Cell[2537, 83, 5636, 156, 284, "Input"]
+Cell[2537, 83, 5685, 157, 284, "Input"]
 }
 ]
 *)

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      8305,        243]
-NotebookOptionsPosition[      7630,        218]
-NotebookOutlinePosition[      7988,        234]
-CellTagsIndexPosition[      7945,        231]
+NotebookDataLength[     14585,        407]
+NotebookOptionsPosition[     13394,        364]
+NotebookOutlinePosition[     14006,        389]
+CellTagsIndexPosition[     13921,        384]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -112,38 +112,144 @@ Cell[BoxData[
   RowBox[{"Module", "[", 
    RowBox[{
     RowBox[{"{", 
-     RowBox[{"initialRepresentatives", ",", "images"}], "}"}], ",", 
-    "\[IndentingNewLine]", 
+     RowBox[{
+     "initialRepresentatives", ",", "boundaries", ",", "images", ",", "basis",
+       ",", "imagesCoefficients", ",", "boundariesCoefficients", ",", 
+      "numberOfColumns", ",", "linearSolve", ",", "numberOfRows"}], "}"}], 
+    ",", "\[IndentingNewLine]", 
     RowBox[{
      RowBox[{"initialRepresentatives", "=", 
       RowBox[{"KhRepresentativesInGrading", "[", 
        RowBox[{
         RowBox[{"m", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
         ",", "s", ",", "r"}], "]"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"images", "=", 
-      RowBox[{
-       RowBox[{
+     RowBox[{"numberOfColumns", "=", 
+      RowBox[{"Length", "[", 
+       RowBox[{"KhRepresentativesInGrading", "[", 
         RowBox[{
-         RowBox[{"KhC", "[", "m", "]"}], "[", 
-         RowBox[{"#", ".", 
-          RowBox[{"AllBasisVectorsInGrading", "[", 
-           RowBox[{
-            RowBox[{
-            "m", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], ",", 
-            "s", ",", "r"}], "]"}]}], "]"}], "&"}], "/@", 
-       "initialRepresentatives"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"LinearSolve", "[", 
-      RowBox[{
+         RowBox[{"m", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+         ",", "s", ",", "r"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"numberOfRows", "=", 
+      RowBox[{"Length", "[", 
        RowBox[{"KhRepresentativesInGrading", "[", 
         RowBox[{
          RowBox[{"Still", "[", 
           RowBox[{"m", ",", 
-           RowBox[{"-", "1"}]}], "]"}], ",", "s", ",", "r"}], "]"}], ",", 
-       "images"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
- CellChangeTimes->{{3.618023918143642*^9, 3.6180240604420013`*^9}, {
-  3.618303364310668*^9, 3.6183033690209837`*^9}, {3.618303590937958*^9, 
-  3.618303596905334*^9}, {3.6183036352466993`*^9, 3.618303639639914*^9}, {
-  3.6183049823457193`*^9, 3.618305025186445*^9}}],
+           RowBox[{"-", "1"}]}], "]"}], ",", "s", ",", "r"}], "]"}], "]"}]}], 
+     ";", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"Print", "[", 
+        RowBox[{"Still", "[", 
+         RowBox[{"m", ",", 
+          RowBox[{"-", "1"}]}], "]"}], "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"KhRepresentativesInGrading", "[", 
+         RowBox[{
+          RowBox[{"Still", "[", 
+           RowBox[{"m", ",", 
+            RowBox[{"-", "1"}]}], "]"}], ",", "s", ",", "r"}], "]"}], "]"}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<numberOfColumns = \>\"", ",", "numberOfColumns"}], "]"}],
+        ";"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "[", "initialRepresentatives", "]"}], "\[Equal]", 
+        "0"}], ",", 
+       RowBox[{"Matrix", "[", 
+        RowBox[{"numberOfColumns", ",", 
+         RowBox[{"{", "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"images", "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"KhC", "[", "m", "]"}], "[", 
+            RowBox[{"#", ".", 
+             RowBox[{"AllBasisVectorsInGrading", "[", 
+              RowBox[{
+               RowBox[{
+               "m", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+               ",", "s", ",", "r"}], "]"}]}], "]"}], "&"}], "/@", 
+          "initialRepresentatives"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"boundaries", "=", 
+         RowBox[{"Differential", "/@", 
+          RowBox[{"AllBasisVectorsInGrading", "[", 
+           RowBox[{
+            RowBox[{"Still", "[", 
+             RowBox[{"m", ",", 
+              RowBox[{"-", "1"}]}], "]"}], ",", 
+            RowBox[{"s", "-", "1"}], ",", "r"}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"basis", "=", 
+         RowBox[{"AllBasisVectorsInGrading", "[", 
+          RowBox[{
+           RowBox[{"Still", "[", 
+            RowBox[{"m", ",", 
+             RowBox[{"-", "1"}]}], "]"}], ",", "s", ",", "r"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"imagesCoefficients", "=", 
+         RowBox[{"Outer", "[", 
+          RowBox[{"Coefficient", ",", "images", ",", "basis"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"boundariesCoefficients", "=", 
+         RowBox[{"Outer", "[", 
+          RowBox[{"Coefficient", ",", "boundaries", ",", "basis"}], "]"}]}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{"Print", "[", 
+           RowBox[{"\"\<boundaries = \>\"", ",", "boundaries"}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", 
+           RowBox[{"\"\<images = \>\"", ",", "images"}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", 
+           RowBox[{
+           "\"\<imagesCoefficients = \>\"", ",", "imagesCoefficients"}], 
+           "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", 
+           RowBox[{
+           "\"\<boundariesCoefficients = \>\"", ",", 
+            "boundariesCoefficients"}], "]"}], ";"}], "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{"linearSolve", "=", 
+         RowBox[{"LinearSolve", "[", 
+          RowBox[{
+           RowBox[{"Transpose", "[", 
+            RowBox[{
+             RowBox[{"KhRepresentativesInGrading", "[", 
+              RowBox[{
+               RowBox[{"Still", "[", 
+                RowBox[{"m", ",", 
+                 RowBox[{"-", "1"}]}], "]"}], ",", "s", ",", "r"}], "]"}], 
+             "~", "Join", "~", "boundariesCoefficients"}], "]"}], ",", 
+           RowBox[{"Transpose", "[", "imagesCoefficients", "]"}]}], "]"}]}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{"Print", "[", 
+           RowBox[{"\"\<linearSolve = \>\"", ",", "linearSolve"}], "]"}], 
+          ";"}], "*)"}], "\[IndentingNewLine]", 
+        RowBox[{"Transpose", "[", 
+         RowBox[{"Matrix", "[", 
+          RowBox[{"numberOfRows", ",", 
+           RowBox[{"Take", "[", 
+            RowBox[{"linearSolve", ",", "numberOfColumns"}], "]"}]}], "]"}], 
+         "]"}]}]}], "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGCQBGIQvX3GEdurX145PlDp8wfR/z50boj9+srx2WqFjSD6
+APO9MyC6/secsyD625P0SyBat+oLmFYSOF0VB6Rjvqs2gGiRDfNbLjO+drT/
+8K4DRG+WKN0Eorfs/nAIRJv0NR4H0QZswhfA8hyXL4PoyyJmN0B05UKfeyD6
+Y5PgYxDd88znA4jm6P/4A0QHrUj/C6K1ojj4rwBpJps1wiA64OFSGTC/7oUC
+iL50VVkZLP6YVx1Em8zdpQuidwm8MQPRfh4/wPSLtV9tQHRS6C9XEJ12p9AL
+RBfc3eoHou1Oby4F0YyOe8H0vz2pjSC6Wzy3CURXBZm2g+imqz86QPSbiGsz
+QPQD6+75IHqJssUSEF2/8RKYNhEN2QeijyXNAdPTNA4aXwXxty43BdEAnR3V
+LQ==
+  "]],
 
 Cell[BoxData[
  RowBox[{"(*", " ", 
@@ -191,23 +297,63 @@ Cell[BoxData[
       RowBox[{
        RowBox[{
         RowBox[{"#", "\[Rule]", 
-         RowBox[{"Matrix", "[", 
-          RowBox[{
-           RowBox[{"KhInGrading", "[", "target", "]"}], ",", 
-           RowBox[{"KhInGrading", "[", "source", "]"}], ",", 
-           RowBox[{"Kh", "[", 
-            RowBox[{"b", ",", 
-             RowBox[{
-             "#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], ",", 
-             RowBox[{
-             "#", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}], 
-            "]"}]}], "]"}]}], "&"}], "/@", "allGradings"}], 
-      "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
-   "]"}]}]], "Input",
+         RowBox[{"Kh", "[", 
+          RowBox[{"b", ",", 
+           RowBox[{
+           "#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], ",", 
+           RowBox[{
+           "#", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}], 
+          "]"}]}], "&"}], "/@", "allGradings"}], "\[IndentingNewLine]", 
+      "]"}]}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
  CellChangeTimes->{{3.618305250352775*^9, 3.618305357747259*^9}, {
   3.6183053886398897`*^9, 3.6183054751002407`*^9}, {3.618305505907501*^9, 
   3.6183055551042337`*^9}, {3.6183474984459467`*^9, 3.618347534882699*^9}, {
-  3.618347877741847*^9, 3.61834789050974*^9}}],
+  3.618347877741847*^9, 3.61834789050974*^9}, {3.624834703535816*^9, 
+  3.624834720499557*^9}, {3.624837808582821*^9, 3.6248378298263206`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"??", "KhInGrading"}]], "Input",
+ CellChangeTimes->{{3.6248377926132183`*^9, 3.624837799151929*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Global`KhInGrading", "Print", "PrintUsage",
+ CellChangeTimes->{3.6248377998420477`*^9},
+ CellTags->"Info3624877399-1871430"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"KhInGrading", "[", 
+          RowBox[{"b_BR", ",", "s_Integer", ",", "r_Integer", ",", 
+           RowBox[{"differential_", ":", "Differential"}]}], "]"}], ":=", 
+         RowBox[{"Length", "[", 
+          RowBox[{"KhRepresentativesInGrading", "[", 
+           RowBox[{"b", ",", "s", ",", "r", ",", "differential"}], "]"}], 
+          "]"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[$CellContext`KhInGrading],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6248377998751383`*^9},
+ CellTags->"Info3624877399-1871430"]
+}, Open  ]]
+}, Open  ]],
 
 Cell[BoxData[
  RowBox[{"(*", " ", 
@@ -217,7 +363,8 @@ Cell[BoxData[
  CellChangeTimes->{{3.6183055613536587`*^9, 3.618305585720705*^9}}]
 },
 WindowSize->{740, 756},
-WindowMargins->{{197, Automatic}, {119, Automatic}},
+WindowMargins->{{Automatic, 155}, {Automatic, 0}},
+ShowSelection->True,
 FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
 2013)",
 StyleDefinitions->"Default.nb"
@@ -226,10 +373,18 @@ StyleDefinitions->"Default.nb"
 
 (* Internal cache information *)
 (*CellTagsOutline
-CellTagsIndex->{}
+CellTagsIndex->{
+ "Info3624877399-1871430"->{
+  Cell[11880, 321, 130, 2, 40, "Print",
+   CellTags->"Info3624877399-1871430"],
+  Cell[12013, 325, 1100, 28, 39, "Print",
+   CellTags->"Info3624877399-1871430"]}
+ }
 *)
 (*CellTagsIndex
-CellTagsIndex->{}
+CellTagsIndex->{
+ {"Info3624877399-1871430", 13735, 376}
+ }
 *)
 (*NotebookFileOutline
 Notebook[{
@@ -240,11 +395,20 @@ Cell[1748, 54, 552, 17, 46, "Input"],
 Cell[2303, 73, 214, 5, 28, "Input"],
 Cell[2520, 80, 596, 17, 46, "Input"],
 Cell[3119, 99, 244, 5, 28, "Input"],
-Cell[3366, 106, 1591, 39, 131, "Input"],
-Cell[4960, 147, 301, 6, 28, "Input"],
-Cell[5264, 155, 420, 10, 46, "Input"],
-Cell[5687, 167, 1686, 42, 131, "Input"],
-Cell[7376, 211, 250, 5, 28, "Input"]
+Cell[3366, 106, 6031, 145, 471, "Input"],
+Cell[9400, 253, 301, 6, 28, "Input"],
+Cell[9704, 261, 420, 10, 46, "Input"],
+Cell[10127, 273, 1580, 38, 114, "Input"],
+Cell[CellGroupData[{
+Cell[11732, 315, 123, 2, 28, "Input"],
+Cell[CellGroupData[{
+Cell[11880, 321, 130, 2, 40, "Print",
+ CellTags->"Info3624877399-1871430"],
+Cell[12013, 325, 1100, 28, 39, "Print",
+ CellTags->"Info3624877399-1871430"]
+}, Open  ]]
+}, Open  ]],
+Cell[13140, 357, 250, 5, 28, "Input"]
 }
 ]
 *)

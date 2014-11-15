@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[   1605344,      45045]
-NotebookOptionsPosition[   1596554,      44753]
-NotebookOutlinePosition[   1596913,      44769]
-CellTagsIndexPosition[   1596870,      44766]
+NotebookDataLength[   1607423,      45109]
+NotebookOptionsPosition[   1598386,      44810]
+NotebookOutlinePosition[   1598740,      44826]
+CellTagsIndexPosition[   1598697,      44823]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -44749,10 +44749,67 @@ Cell[BoxData["True"], "Output",
  CellChangeTimes->{
   3.621892654080659*^9, {3.621893002768407*^9, 3.621893015120277*^9}, 
    3.621893301918499*^9}]
-}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MortonExample", "=", 
+  RowBox[{"BR", "[", 
+   RowBox[{"4", ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "3"}], ",", 
+      RowBox[{"-", "3"}], ",", "2", ",", 
+      RowBox[{"-", "3"}], ",", "2", ",", "1", ",", "1", ",", "1", ",", 
+      RowBox[{"-", "2"}], ",", "1", ",", 
+      RowBox[{"-", "2"}]}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.62250079713276*^9, 3.622500834318306*^9}}],
+
+Cell[BoxData[
+ RowBox[{"BR", "[", 
+  RowBox[{"4", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "3"}], ",", 
+     RowBox[{"-", "3"}], ",", "2", ",", 
+     RowBox[{"-", "3"}], ",", "2", ",", "1", ",", "1", ",", "1", ",", 
+     RowBox[{"-", "2"}], ",", "1", ",", 
+     RowBox[{"-", "2"}]}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.622500836304028*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"SpectralAnnularKh", "[", "MortonExample", "]"}]], "Input",
+ CellChangeTimes->{{3.622500848701391*^9, 3.622500872808281*^9}}],
+
+Cell[BoxData[
+ RowBox[{"MurasagiThomasExamples", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"BR", "[", 
+     RowBox[{"3", ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "2", ",", "2", ",", 
+        RowBox[{"-", "1"}], ",", 
+        RowBox[{"-", "1"}], ",", "2"}], "}"}]}], "]"}], ",", 
+    RowBox[{"BR", "[", 
+     RowBox[{"3", ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", 
+        RowBox[{"-", "2"}], ",", 
+        RowBox[{"-", "2"}], ",", "1", ",", "1", ",", 
+        RowBox[{"-", "2"}]}], "}"}]}], "]"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.6225034320431013`*^9, 3.6225034413024073`*^9}, {
+  3.62250619180269*^9, 3.6225062326620893`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"SpectralAnnularKh", "/@", "MurasagiThomasExamples"}]], "Input",
+ CellChangeTimes->{{3.6225062281133823`*^9, 3.622506240848659*^9}}]
 },
-WindowSize->{1902, 787},
-WindowMargins->{{Automatic, 303}, {208, Automatic}},
+WindowSize->{959, 765},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
 2013)",
 StyleDefinitions->"Default.nb"
@@ -44768,14 +44825,14 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 1048, 26, 31, "Input"],
+Cell[557, 20, 1048, 26, 65, "Input"],
 Cell[CellGroupData[{
 Cell[1630, 50, 296, 7, 28, "Input"],
 Cell[1929, 59, 113, 1, 28, "Output"]
 }, Open  ]],
 Cell[2057, 63, 303, 9, 28, "Input"],
-Cell[2363, 74, 3790, 93, 201, "Input"],
-Cell[6156, 169, 3681, 93, 199, "Input"],
+Cell[2363, 74, 3790, 93, 235, "Input"],
+Cell[6156, 169, 3681, 93, 284, "Input"],
 Cell[CellGroupData[{
 Cell[9862, 266, 408, 12, 28, "Input"],
 Cell[10273, 280, 225, 4, 28, "Output"]
@@ -44873,7 +44930,7 @@ Cell[478503, 13668, 221113, 5907, 4380, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[699653, 19580, 200, 4, 28, "Input"],
-Cell[699856, 19586, 22964, 751, 233, "Output"]
+Cell[699856, 19586, 22964, 751, 284, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[722857, 20342, 894, 23, 28, "Input"],
@@ -44881,7 +44938,7 @@ Cell[723754, 20367, 214672, 5913, 2092, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[938463, 26285, 197, 4, 28, "Input"],
-Cell[938663, 26291, 55308, 1761, 573, "Output"]
+Cell[938663, 26291, 55308, 1761, 692, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[994008, 28057, 893, 23, 28, "Input"],
@@ -44960,11 +45017,11 @@ Cell[1564754, 43720, 244, 4, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[1565035, 43729, 322, 7, 28, "Input"],
-Cell[1565360, 43738, 4139, 135, 140, "Output"]
+Cell[1565360, 43738, 4139, 135, 211, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[1569536, 43878, 300, 7, 28, "Input"],
-Cell[1569839, 43887, 4174, 138, 140, "Output"]
+Cell[1569839, 43887, 4174, 138, 211, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[1574050, 44030, 582, 14, 28, "Input"],
@@ -45046,7 +45103,14 @@ Cell[1595257, 44711, 654, 18, 51, "Output"]
 Cell[CellGroupData[{
 Cell[1595948, 44734, 439, 11, 28, "Input"],
 Cell[1596390, 44747, 148, 3, 28, "Output"]
-}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1596575, 44755, 430, 11, 28, "Input"],
+Cell[1597008, 44768, 365, 10, 28, "Output"]
+}, Open  ]],
+Cell[1597388, 44781, 148, 2, 28, "Input"],
+Cell[1597539, 44785, 685, 19, 28, "Input"],
+Cell[1598227, 44806, 155, 2, 28, "Input"]
 }
 ]
 *)
