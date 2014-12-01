@@ -1,0 +1,476 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     15801,        466]
+NotebookOptionsPosition[     14605,        420]
+NotebookOutlinePosition[     14963,        436]
+CellTagsIndexPosition[     14920,        433]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"Clear", "[", "BraidMovie", "]"}]], "Input",
+ CellChangeTimes->{{3.626051646160748*^9, 3.6260516479414787`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"BraidMovie", "[", 
+   RowBox[{"braid_BR", ",", 
+    RowBox[{"{", 
+     RowBox[{"R3", "[", "offset_Integer", "]"}], "}"}]}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"stretch", ",", "k", ",", "direction"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{
+         "braid", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], "<",
+          "3"}], "\[Or]", 
+        RowBox[{
+         RowBox[{"Length", "[", 
+          RowBox[{
+          "braid", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+          "]"}], "<", "3"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Print", "[", 
+         RowBox[{
+         "\"\<Invalid braid movie: BraidMovie[\>\"", ",", "braid", ",", 
+          "\"\<,R3[\>\"", ",", "offset", ",", "\"\<]]\>\""}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "\[IndentingNewLine]", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"stretch", "=", 
+      RowBox[{"Take", "[", 
+       RowBox[{
+        RowBox[{
+        "braid", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], ",", 
+        
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"offset", "+", "1"}], ",", 
+          RowBox[{"offset", "+", "3"}]}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"MatchQ", "[", 
+        RowBox[{
+         RowBox[{"Sign", "/@", "stretch"}], ",", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"+", "1"}], ",", 
+            RowBox[{"-", "1"}], ",", 
+            RowBox[{"+", "1"}]}], "}"}], "|", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", 
+            RowBox[{"+", "1"}], ",", 
+            RowBox[{"-", "1"}]}], "}"}]}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Print", "[", 
+         RowBox[{
+         "\"\<You can't apply an R3 move there: BraidMovie[\>\"", ",", 
+          "braid", ",", "\"\<,R3[\>\"", ",", "offset", ",", "\"\<]]\>\""}], 
+         "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "\[IndentingNewLine]", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"k", "=", 
+      RowBox[{"Min", "[", 
+       RowBox[{"Abs", "/@", "stretch"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"MatchQ", "[", 
+         RowBox[{
+          RowBox[{"Abs", "/@", "stretch"}], ",", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"k", ",", 
+             RowBox[{"k", "+", "1"}], ",", "k"}], "}"}], "|", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"k", "+", "1"}], ",", "k", ",", 
+             RowBox[{"k", "+", "1"}]}], "}"}]}]}], "]"}]}], ",", 
+       RowBox[{
+        RowBox[{"Print", "[", 
+         RowBox[{
+         "\"\<Invalid braid movie: BraidMovie[\>\"", ",", "braid", ",", 
+          "\"\<,R3[\>\"", ",", "offset", ",", "\"\<]]\>\""}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "\[IndentingNewLine]", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"direction", "=", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Abs", "[", 
+          RowBox[{
+          "stretch", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+          "]"}], "\[Equal]", "k"}], ",", "\"\<R\>\"", ",", "\"\<L\>\""}], 
+       "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"BraidMovie", "[", 
+      RowBox[{"braid", ",", 
+       RowBox[{"{", 
+        RowBox[{"R3", "[", 
+         RowBox[{"offset", ",", "k", ",", "direction", ",", 
+          RowBox[{"Sign", "/@", "stretch"}]}], "]"}], "}"}]}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.626048797158462*^9, 3.626048815270771*^9}, {
+  3.6260488853662567`*^9, 3.626049031012588*^9}, {3.626049110381961*^9, 
+  3.6260491197840023`*^9}, {3.626049168082643*^9, 3.626049171287875*^9}, {
+  3.6260494305978727`*^9, 3.626049571720269*^9}, {3.6260516415393963`*^9, 
+  3.626051658841308*^9}, {3.626052313257107*^9, 3.626052348163603*^9}, {
+  3.626052557480178*^9, 3.626052558243475*^9}, {3.626052628478402*^9, 
+  3.626052668457718*^9}, {3.626052745241588*^9, 3.626052781834906*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "FinalBraid", "]"}]], "Input",
+ CellChangeTimes->{{3.626052798138146*^9, 3.62605280005774*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"FinalBraid", "[", 
+   RowBox[{"braid_", ",", 
+    RowBox[{"R3", "[", 
+     RowBox[{"offset_", ",", "generator_", ",", "direction_", ",", "signs_"}],
+      "]"}]}], "]"}], ":=", 
+  RowBox[{"BR", "[", 
+   RowBox[{
+    RowBox[{"braid", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+    ",", 
+    RowBox[{
+     RowBox[{"Take", "[", 
+      RowBox[{
+       RowBox[{
+       "braid", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], ",", 
+       "offset"}], "]"}], "~", "Join", "~", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"generator", ",", "generator", ",", "generator"}], "}"}], 
+         "+", 
+         RowBox[{"Switch", "[", 
+          RowBox[{"direction", ",", "\"\<L\>\"", ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", "\"\<R\>\"", ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "0", ",", "1"}], "}"}]}], "]"}]}], ")"}], 
+       RowBox[{"Reverse", "[", "signs", "]"}]}], ")"}], "~", "Join", "~", 
+     RowBox[{"Drop", "[", 
+      RowBox[{
+       RowBox[{
+       "braid", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], ",", 
+       RowBox[{"offset", "+", "3"}]}], "]"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.626049853152582*^9, 3.626049976964158*^9}, {
+  3.626051878143916*^9, 3.626051879997529*^9}, {3.626051998480859*^9, 
+  3.626051999840826*^9}, {3.626052401454588*^9, 3.6260524464374733`*^9}, {
+  3.626052500064334*^9, 3.6260525087049923`*^9}, {3.626052697498211*^9, 
+  3.6260526978181133`*^9}, {3.626052871827517*^9, 3.626052911054152*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BraidMovie", "[", 
+  RowBox[{
+   RowBox[{"BR", "[", 
+    RowBox[{"3", ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "1"}], "}"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"R3", "[", "0", "]"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6260495517136307`*^9, 3.6260495775579777`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"BraidMovie", "[", 
+  RowBox[{
+   RowBox[{"BR", "[", 
+    RowBox[{"3", ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "1"}], "}"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"R3", "[", 
+     RowBox[{"0", ",", "1", ",", "\<\"R\"\>", ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "]"}], "}"}]}], 
+  "]"}]], "Output",
+ CellChangeTimes->{{3.626049578074622*^9, 3.6260495831947536`*^9}, 
+   3.6260500570530977`*^9, 3.626051665829281*^9, 3.626051957185134*^9, 
+   3.626052317965681*^9, 3.626052350141943*^9, {3.626052461417617*^9, 
+   3.626052472611088*^9}, 3.626052510674343*^9, 3.626052560165371*^9, 
+   3.626052639247085*^9, 3.6260526704390707`*^9, {3.626052783632783*^9, 
+   3.6260528016806192`*^9}, 3.626052838144919*^9, 3.626052912756221*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Still", "[", 
+  RowBox[{"%", ",", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.626050058597959*^9, 3.626050061194887*^9}}],
+
+Cell[BoxData[
+ RowBox[{"BR", "[", 
+  RowBox[{"3", ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "1", ",", "2"}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.626050061624002*^9, 3.6260516668957453`*^9, 3.6260523194670143`*^9, 
+   3.626052351538568*^9, 3.626052473660384*^9, 3.626052511141137*^9, 
+   3.626052640281584*^9, 3.626052670973393*^9, {3.626052785150663*^9, 
+   3.626052802164281*^9}, 3.626052838944806*^9, 3.6260529135065107`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BraidMovie", "[", 
+  RowBox[{
+   RowBox[{"BR", "[", 
+    RowBox[{"5", ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "1", ",", 
+       RowBox[{"-", "2"}]}], "}"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"R3", "[", "0", "]"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.626049596448859*^9, 3.6260496006088142`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"BraidMovie", "[", 
+  RowBox[{
+   RowBox[{"BR", "[", 
+    RowBox[{"5", ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "1", ",", 
+       RowBox[{"-", "2"}]}], "}"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"R3", "[", 
+     RowBox[{"0", ",", "1", ",", "\<\"L\"\>", ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1", ",", 
+        RowBox[{"-", "1"}]}], "}"}]}], "]"}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.626049602457328*^9, 3.626051668247138*^9, 
+  3.626052352377079*^9, 3.626052464270247*^9, 3.626052511942006*^9, 
+  3.6260526409160748`*^9, 3.626052671557094*^9, 3.6260529170093*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Still", "[", 
+  RowBox[{"%", ",", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.626052676676803*^9, 3.626052678655161*^9}}],
+
+Cell[BoxData[
+ RowBox[{"BR", "[", 
+  RowBox[{"5", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "2", ",", "1"}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.626052679781171*^9, 3.626052918276926*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"BraidMovie", "[", 
+   RowBox[{"braid_", ",", 
+    RowBox[{"{", 
+     RowBox[{"R3", "[", 
+      RowBox[{"offset_", ",", "generator_", ",", "\"\<L\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"+", "1"}], ",", 
+         RowBox[{"-", "1"}], ",", 
+         RowBox[{"-", "1"}]}], "}"}]}], "]"}], "}"}]}], "]"}], ":=", 
+  RowBox[{"BraidMovie", "[", 
+   RowBox[{"braid", ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"R2", "[", 
+       RowBox[{"offset", ",", "1", ",", "generator"}], "]"}], ",", 
+      RowBox[{"R3", "[", 
+       RowBox[{
+        RowBox[{"offset", "+", "1"}], ",", "generator", ",", "\"\<R\>\"", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "1"}], ",", 
+          RowBox[{"-", "1"}], ",", 
+          RowBox[{"+", "1"}]}], "}"}]}], "]"}], ",", 
+      RowBox[{"R2", "[", 
+       RowBox[{
+        RowBox[{"offset", "+", "3"}], ",", 
+        RowBox[{"-", "1"}], ",", 
+        RowBox[{"generator", "+", 
+         RowBox[{"Sign", "[", "generator", "]"}]}]}], "]"}]}], "}"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.62604962479041*^9, 3.626049636417218*^9}, {
+   3.6260496732145853`*^9, 3.626049691817347*^9}, {3.626049802371017*^9, 
+   3.6260498189245872`*^9}, {3.6260501374503117`*^9, 3.626050146707612*^9}, {
+   3.626050305378331*^9, 3.626050317585595*^9}, {3.62605035002244*^9, 
+   3.626050448942318*^9}, {3.626051987408958*^9, 3.626051988567892*^9}, {
+   3.626052074720132*^9, 3.6260520762802277`*^9}, 3.6260523607148533`*^9, {
+   3.626052931712019*^9, 3.626052938456448*^9}, {3.626052988821574*^9, 
+   3.62605299211791*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BraidMovie", "[", 
+  RowBox[{
+   RowBox[{"BR", "[", 
+    RowBox[{"5", ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", 
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "2"}]}], "}"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"R3", "[", "0", "]"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.626051511707514*^9, 3.626051515034629*^9}, {
+  3.626052155975016*^9, 3.626052160830946*^9}}],
+
+Cell[BoxData[
+ RowBox[{"BraidMovie", "[", 
+  RowBox[{
+   RowBox[{"BR", "[", 
+    RowBox[{"5", ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", 
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "2"}]}], "}"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"R2", "[", 
+      RowBox[{"0", ",", "1", ",", "1"}], "]"}], ",", 
+     RowBox[{"R3", "[", 
+      RowBox[{"1", ",", "1", ",", "\<\"R\"\>", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", 
+         RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "]"}], ",", 
+     RowBox[{"R2", "[", 
+      RowBox[{"3", ",", 
+       RowBox[{"-", "1"}], ",", "2"}], "]"}]}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.626051515972382*^9, 3.626051555421417*^9, 3.626051670416115*^9, 
+   3.626051958920759*^9, {3.6260519897458677`*^9, 3.6260520019731197`*^9}, {
+   3.6260520458412848`*^9, 3.62605205571474*^9}, 3.6260520930973873`*^9, 
+   3.6260521625706367`*^9, 3.626052363837802*^9, {3.626052466537711*^9, 
+   3.626052478398835*^9}, 3.62605251302649*^9, 3.626052562567272*^9, {
+   3.626052924398739*^9, 3.626052939944646*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Still", "[", 
+  RowBox[{"%", ",", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.62605151970188*^9, 3.626051522539406*^9}, {
+  3.626052041448366*^9, 3.626052054100829*^9}}],
+
+Cell[BoxData[
+ RowBox[{"BR", "[", 
+  RowBox[{"5", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "1"}], ",", "2", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "2"}]}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.626051522960649*^9, 3.626051556405107*^9, 3.626051671518409*^9, 
+   3.6260519597717943`*^9, {3.626051990695346*^9, 3.6260520029554996`*^9}, {
+   3.626052042221036*^9, 3.626052057298664*^9}, 3.6260520954599047`*^9, 
+   3.626052365205131*^9, {3.6260524676383133`*^9, 3.6260524791315737`*^9}, 
+   3.626052513493826*^9, 3.626052565120133*^9, 3.626052941479198*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Still", "[", 
+  RowBox[{"%%", ",", "2"}], "]"}]], "Input",
+ CellChangeTimes->{{3.626052103578452*^9, 3.6260521044417353`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"BR", "[", 
+  RowBox[{"5", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "2"}]}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.626052104806676*^9, 3.626052515445057*^9, 
+  3.626052945432316*^9}]
+}, Open  ]]
+},
+WindowSize->{1424, 837},
+WindowMargins->{{259, Automatic}, {60, Automatic}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 135, 2, 28, "Input"],
+Cell[695, 24, 4347, 114, 252, "Input"],
+Cell[5045, 140, 132, 2, 28, "Input"],
+Cell[5180, 144, 1644, 40, 63, "Input"],
+Cell[CellGroupData[{
+Cell[6849, 188, 329, 9, 28, "Input"],
+Cell[7181, 199, 810, 18, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8028, 222, 147, 3, 28, "Input"],
+Cell[8178, 227, 445, 9, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8660, 241, 350, 10, 28, "Input"],
+Cell[9013, 253, 628, 16, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9678, 274, 147, 3, 28, "Input"],
+Cell[9828, 279, 223, 6, 28, "Output"]
+}, Open  ]],
+Cell[10066, 288, 1626, 40, 46, "Input"],
+Cell[CellGroupData[{
+Cell[11717, 332, 420, 12, 28, "Input"],
+Cell[12140, 346, 1108, 28, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13285, 379, 195, 4, 28, "Input"],
+Cell[13483, 385, 606, 13, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14126, 403, 150, 3, 28, "Input"],
+Cell[14279, 408, 310, 9, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
