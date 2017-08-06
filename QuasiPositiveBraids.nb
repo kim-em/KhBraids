@@ -1,0 +1,859 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     27610,        850]
+NotebookOptionsPosition[     25496,        771]
+NotebookOutlinePosition[     25855,        787]
+CellTagsIndexPosition[     25812,        784]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"KnotTheoryPaths", "=", 
+  RowBox[{"{", 
+   RowBox[{
+   "\"\</Users/scott/projects/KnotTheory/trunk/\>\"", ",", 
+    "\"\</Users/tony/Desktop/\>\""}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"$Path", "=", 
+   RowBox[{"$Path", "~", "Join", "~", "KnotTheoryPaths"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "KnotTheory`"}]}], "Input",
+ CellChangeTimes->{{3.6114724931268597`*^9, 3.6114725787897987`*^9}, 
+   3.616977145209981*^9, {3.619909571279026*^9, 3.619909578856896*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"/Users/scott/projects/KnotTheory/trunk/\"\>", 
+   ",", "\<\"/Users/tony/Desktop/\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.65636530601435*^9, 3.6563653776043253`*^9, 
+  3.656365481811379*^9}],
+
+Cell[BoxData["\<\"Loading KnotTheory` version of January 20, 2015, \
+10:42:19.1122.\\nRead more at http://katlas.org/wiki/KnotTheory.\"\>"], \
+"Print",
+ CellChangeTimes->{3.656365306016626*^9, 3.6563653776172237`*^9, 
+  3.656365481823979*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"b", "[", 
+   RowBox[{"m_", ",", "n_", ",", "k_"}], "]"}], ":=", 
+  RowBox[{"BR", "[", 
+   RowBox[{
+    RowBox[{"k", "+", "1"}], ",", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"{", "n", "}"}]}], "]"}], "~", "Join", "~", 
+     RowBox[{"Flatten", "[", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"Range", "[", "k", "]"}], ",", 
+        RowBox[{"{", "m", "}"}]}], "]"}], "]"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6563653123055983`*^9, 3.6563653538628073`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BraidPlot", "[", 
+  RowBox[{"b", "[", 
+   RowBox[{"2", ",", "3", ",", "4"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.656365675639534*^9, 3.656365679889227*^9}, {
+  3.656365716704495*^9, 3.656365716749679*^9}, {3.656365755120882*^9, 
+  3.6563657551867237`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{LineBox[{{0, 4.5}, {0.25, 4.25}}], 
+     LineBox[{{0.5, 4}, {1, 4.5}}]}, {LineBox[{{1, 4.5}, {1.25, 4.25}}], 
+     LineBox[{{1.5, 4}, {2, 4.5}}]}, {LineBox[{{2, 4.5}, {2.25, 4.25}}], 
+     LineBox[{{2.5, 4}, {3, 4.5}}]}, {LineBox[{{3, 4.5}, {3.5, 4}}], 
+     LineBox[{{3.75, 4.25}, {4, 4.5}}]}, LineBox[{{4, 4.5}, {5, 4.5}}], 
+    LineBox[{{5, 4.5}, {6, 4.5}}], 
+    LineBox[{{6, 4.5}, {7, 4.5}}], {LineBox[{{7, 4.5}, {7.5, 4}}], 
+     LineBox[{{7.75, 4.25}, {8, 4.5}}]}, LineBox[{{8, 4.5}, {9, 4.5}}], 
+    LineBox[{{9, 4.5}, {10, 4.5}}], 
+    LineBox[{{10, 4.5}, {11, 4.5}}]}, {{LineBox[{{0, 3.5}, {0.5, 4}}], 
+     LineBox[{{0.75, 3.75}, {1, 3.5}}]}, {LineBox[{{1, 3.5}, {1.5, 4}}], 
+     LineBox[{{1.75, 3.75}, {2, 3.5}}]}, {LineBox[{{2, 3.5}, {2.5, 4}}], 
+     LineBox[{{2.75, 3.75}, {3, 3.5}}]}, {LineBox[{{3, 3.5}, {3.25, 3.75}}], 
+     LineBox[{{3.5, 4}, {4, 3.5}}]}, {LineBox[{{4, 3.5}, {4.5, 3}}], 
+     LineBox[{{4.75, 3.25}, {5, 3.5}}]}, LineBox[{{5, 3.5}, {6, 3.5}}], 
+    LineBox[{{6, 3.5}, {7, 3.5}}], {LineBox[{{7, 3.5}, {7.25, 3.75}}], 
+     LineBox[{{7.5, 4}, {8, 3.5}}]}, {LineBox[{{8, 3.5}, {8.5, 3}}], 
+     LineBox[{{8.75, 3.25}, {9, 3.5}}]}, LineBox[{{9, 3.5}, {10, 3.5}}], 
+    LineBox[{{10, 3.5}, {11, 3.5}}]}, {LineBox[{{0, 2.5}, {1, 2.5}}], 
+    LineBox[{{1, 2.5}, {2, 2.5}}], LineBox[{{2, 2.5}, {3, 2.5}}], 
+    LineBox[{{3, 2.5}, {4, 2.5}}], {LineBox[{{4, 2.5}, {4.25, 2.75}}], 
+     LineBox[{{4.5, 3}, {5, 2.5}}]}, {LineBox[{{5, 2.5}, {5.5, 2}}], 
+     LineBox[{{5.75, 2.25}, {6, 2.5}}]}, LineBox[{{6, 2.5}, {7, 2.5}}], 
+    LineBox[{{7, 2.5}, {8, 2.5}}], {LineBox[{{8, 2.5}, {8.25, 2.75}}], 
+     LineBox[{{8.5, 3}, {9, 2.5}}]}, {LineBox[{{9, 2.5}, {9.5, 2}}], 
+     LineBox[{{9.75, 2.25}, {10, 2.5}}]}, LineBox[{{10, 2.5}, {11, 2.5}}]}, {
+    LineBox[{{0, 1.5}, {1, 1.5}}], LineBox[{{1, 1.5}, {2, 1.5}}], 
+    LineBox[{{2, 1.5}, {3, 1.5}}], LineBox[{{3, 1.5}, {4, 1.5}}], 
+    LineBox[{{4, 1.5}, {5, 1.5}}], {LineBox[{{5, 1.5}, {5.25, 1.75}}], 
+     LineBox[{{5.5, 2}, {6, 1.5}}]}, {LineBox[{{6, 1.5}, {6.5, 1}}], 
+     LineBox[{{6.75, 1.25}, {7, 1.5}}]}, LineBox[{{7, 1.5}, {8, 1.5}}], 
+    LineBox[{{8, 1.5}, {9, 1.5}}], {LineBox[{{9, 1.5}, {9.25, 1.75}}], 
+     LineBox[{{9.5, 2}, {10, 1.5}}]}, {LineBox[{{10, 1.5}, {10.5, 1}}], 
+     LineBox[{{10.75, 1.25}, {11, 1.5}}]}}, {LineBox[{{0, 0.5}, {1, 0.5}}], 
+    LineBox[{{1, 0.5}, {2, 0.5}}], LineBox[{{2, 0.5}, {3, 0.5}}], 
+    LineBox[{{3, 0.5}, {4, 0.5}}], LineBox[{{4, 0.5}, {5, 0.5}}], 
+    LineBox[{{5, 0.5}, {6, 0.5}}], {LineBox[{{6, 0.5}, {6.25, 0.75}}], 
+     LineBox[{{6.5, 1}, {7, 0.5}}]}, LineBox[{{7, 0.5}, {8, 0.5}}], 
+    LineBox[{{8, 0.5}, {9, 0.5}}], 
+    LineBox[{{9, 0.5}, {10, 0.5}}], {LineBox[{{10, 0.5}, {10.25, 0.75}}], 
+     LineBox[{{10.5, 1}, {11, 0.5}}]}}}]], "Output",
+ CellChangeTimes->{3.656365680252186*^9, 3.656365717141059*^9, 
+  3.656365755685154*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sInvariant", "[", 
+  RowBox[{"PD", "[", 
+   RowBox[{"b", "[", 
+    RowBox[{"2", ",", "8", ",", "8"}], "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.656365816194736*^9, 3.656365853590249*^9}, {
+  3.6563658958933277`*^9, 3.656365905547559*^9}, {3.656365951612586*^9, 
+  3.656365959446086*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{{3.656365834587058*^9, 3.6563658546765013`*^9}, {
+  3.6563658978611393`*^9, 3.65636590660251*^9}, {3.656365956307646*^9, 
+  3.656365970236174*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"sInvariant", "[", 
+     RowBox[{"PD", "[", 
+      RowBox[{"b", "[", 
+       RowBox[{"2", ",", "n", ",", "k"}], "]"}], "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "1", ",", "9", ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "1", ",", "9", ",", "2"}], "}"}]}], "]"}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.656366075108329*^9, 3.656366079469536*^9}, {
+  3.656366161702572*^9, 3.656366172967382*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"0", "2", "4", "6", "8"},
+    {"0", "0", "2", "4", "6"},
+    {
+     RowBox[{"-", "2"}], "0", "0", "2", "4"},
+    {
+     RowBox[{"-", "4"}], 
+     RowBox[{"-", "2"}], "0", "0", "2"},
+    {
+     RowBox[{"-", "6"}], 
+     RowBox[{"-", "4"}], 
+     RowBox[{"-", "2"}], "0", "0"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.656366139482563*^9, 3.656366180575735*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"sInvariant", "[", 
+     RowBox[{"PD", "[", 
+      RowBox[{"b", "[", 
+       RowBox[{"2", ",", "n", ",", "k"}], "]"}], "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "2", ",", "10", ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "2", ",", "10", ",", "2"}], "}"}]}], "]"}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.656365971924143*^9, 3.656366057092348*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"0", "2", "4", "6", "8"},
+    {"0", "0", "2", "4", "6"},
+    {
+     RowBox[{"-", "2"}], "0", "0", "2", "4"},
+    {
+     RowBox[{"-", "4"}], 
+     RowBox[{"-", "2"}], "0", "0", "2"},
+    {
+     RowBox[{"-", "6"}], 
+     RowBox[{"-", "4"}], 
+     RowBox[{"-", "2"}], "0", "0"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.6563660087891817`*^9, 3.656366043504122*^9}, {
+  3.656366136044936*^9, 3.656366136303248*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"sInvariant", "[", 
+     RowBox[{"PD", "[", 
+      RowBox[{"b", "[", 
+       RowBox[{"3", ",", "n", ",", "k"}], "]"}], "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "2", ",", "10", ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "1", ",", "10", ",", "3"}], "}"}]}], "]"}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.656365971924143*^9, 3.656366057092348*^9}, {
+  3.656366194607567*^9, 3.6563662006261*^9}, {3.656366276196312*^9, 
+  3.656366284011669*^9}, {3.656366486629077*^9, 3.656366486969008*^9}, {
+  3.656366523199038*^9, 3.656366523268764*^9}, {3.6563665547869062`*^9, 
+  3.6563665548486557`*^9}, {3.656366604007886*^9, 3.656366604049355*^9}, {
+  3.656366819391672*^9, 3.6563668295827312`*^9}, {3.656367303121035*^9, 
+  3.656367303289796*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"0", "6", "12", "18"},
+    {"0", "4", "10", "16"},
+    {
+     RowBox[{"-", "2"}], "2", "8", "14"},
+    {
+     RowBox[{"-", "4"}], "0", "6", "12"},
+    {
+     RowBox[{"-", "6"}], 
+     RowBox[{"-", "2"}], "4", "10"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.656366204217434*^9, {3.65636627921766*^9, 3.6563663088424063`*^9}, 
+   3.65636636349422*^9, {3.656366510916374*^9, 3.656366528959008*^9}, 
+   3.656366570810698*^9, {3.656366814987834*^9, 3.656366820667926*^9}, {
+   3.656367297968857*^9, 3.656367303980268*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"sInvariant", "[", 
+     RowBox[{"PD", "[", 
+      RowBox[{"b", "[", 
+       RowBox[{"3", ",", "n", ",", "k"}], "]"}], "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "2", ",", "16", ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "1", ",", "7", ",", "3"}], "}"}]}], "]"}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.656367534323791*^9, 3.6563675590154037`*^9}, {
+  3.656367603526216*^9, 3.656367603666868*^9}, {3.656367669618641*^9, 
+  3.6563676699459*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"0", "6", "12"},
+    {"0", "4", "10"},
+    {
+     RowBox[{"-", "2"}], "2", "8"},
+    {
+     RowBox[{"-", "4"}], "0", "6"},
+    {
+     RowBox[{"-", "6"}], 
+     RowBox[{"-", "2"}], "4"},
+    {
+     RowBox[{"-", "8"}], 
+     RowBox[{"-", "4"}], "2"},
+    {
+     RowBox[{"-", "10"}], 
+     RowBox[{"-", "6"}], "0"},
+    {
+     RowBox[{"-", "12"}], 
+     RowBox[{"-", "8"}], 
+     RowBox[{"-", "2"}]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.656367536976468*^9, 3.656367567846711*^9}, {
+  3.656367667154595*^9, 3.656367670716091*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"sInvariant", "[", 
+     RowBox[{"PD", "[", 
+      RowBox[{"b", "[", 
+       RowBox[{"3", ",", "n", ",", "k"}], "]"}], "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "2", ",", "20", ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "1", ",", "4", ",", "3"}], "}"}]}], "]"}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.656367678924471*^9, 3.656367684704213*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"0", "6"},
+    {"0", "4"},
+    {
+     RowBox[{"-", "2"}], "2"},
+    {
+     RowBox[{"-", "4"}], "0"},
+    {
+     RowBox[{"-", "6"}], 
+     RowBox[{"-", "2"}]},
+    {
+     RowBox[{"-", "8"}], 
+     RowBox[{"-", "4"}]},
+    {
+     RowBox[{"-", "10"}], 
+     RowBox[{"-", "6"}]},
+    {
+     RowBox[{"-", "12"}], 
+     RowBox[{"-", "8"}]},
+    {
+     RowBox[{"-", "14"}], 
+     RowBox[{"-", "10"}]},
+    {
+     RowBox[{"-", "16"}], 
+     RowBox[{"-", "12"}]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.656367681820141*^9, 3.6563676900547523`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"sInvariant", "[", 
+     RowBox[{"PD", "[", 
+      RowBox[{"b", "[", 
+       RowBox[{"3", ",", "n", ",", "k"}], "]"}], "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "2", ",", "10", ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "3", ",", "10", ",", "3"}], "}"}]}], "]"}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.656365971924143*^9, 3.656366057092348*^9}, {
+  3.656366194607567*^9, 3.6563662006261*^9}, {3.656366276196312*^9, 
+  3.656366313481889*^9}, {3.6563665320542507`*^9, 3.656366532270368*^9}, {
+  3.656366842002865*^9, 3.656366842069009*^9}, {3.65636730572956*^9, 
+  3.65636730631452*^9}, {3.656367383441688*^9, 3.656367383514534*^9}, {
+  3.656367440801135*^9, 3.656367440888545*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"4", "10", "16"},
+    {"2", "8", "14"},
+    {"0", "6", "12"},
+    {
+     RowBox[{"-", "2"}], "4", "10"},
+    {
+     RowBox[{"-", "4"}], "2", "8"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.656366363358473*^9, 3.6563665398223057`*^9, 3.656367310778142*^9, {
+   3.656367438173313*^9, 3.656367441626052*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"sInvariant", "[", 
+     RowBox[{"PD", "[", 
+      RowBox[{"b", "[", 
+       RowBox[{"3", ",", "n", ",", "k"}], "]"}], "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "2", ",", "16", ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "3", ",", "6", ",", "3"}], "}"}]}], "]"}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.65636744964814*^9, 3.656367458971195*^9}, {
+  3.6563674972175217`*^9, 3.656367497279331*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"4", "10"},
+    {"2", "8"},
+    {"0", "6"},
+    {
+     RowBox[{"-", "2"}], "4"},
+    {
+     RowBox[{"-", "4"}], "2"},
+    {
+     RowBox[{"-", "6"}], "0"},
+    {
+     RowBox[{"-", "8"}], 
+     RowBox[{"-", "2"}]},
+    {
+     RowBox[{"-", "10"}], 
+     RowBox[{"-", "4"}]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.6563674508222637`*^9, 3.656367467762327*^9}, 
+   3.6563675065784492`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"Length", "[", 
+     RowBox[{"Skeleton", "[", 
+      RowBox[{"PD", "[", 
+       RowBox[{"b", "[", 
+        RowBox[{"3", ",", "n", ",", "k"}], "]"}], "]"}], "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "1", ",", "10"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "1", ",", "10"}], "}"}]}], "]"}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.6563662078838778`*^9, 3.656366260880732*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"2", "2", "2", "2", "2", "2", "2", "2", "2", "2"},
+    {"1", "3", "1", "1", "3", "1", "1", "3", "1", "1"},
+    {"2", "2", "2", "2", "2", "2", "2", "2", "2", "2"},
+    {"1", "3", "1", "1", "3", "1", "1", "3", "1", "1"},
+    {"2", "2", "2", "2", "2", "2", "2", "2", "2", "2"},
+    {"1", "3", "1", "1", "3", "1", "1", "3", "1", "1"},
+    {"2", "2", "2", "2", "2", "2", "2", "2", "2", "2"},
+    {"1", "3", "1", "1", "3", "1", "1", "3", "1", "1"},
+    {"2", "2", "2", "2", "2", "2", "2", "2", "2", "2"},
+    {"1", "3", "1", "1", "3", "1", "1", "3", "1", "1"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.656366228199728*^9, 3.6563662620360813`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"Length", "[", 
+     RowBox[{"Skeleton", "[", 
+      RowBox[{"PD", "[", 
+       RowBox[{"b", "[", 
+        RowBox[{"4", ",", "n", ",", "k"}], "]"}], "]"}], "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "1", ",", "10"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "1", ",", "10"}], "}"}]}], "]"}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.6563668546391573`*^9, 3.6563668546971083`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"1", "2", "3", "2", "1", "2", "3", "2", "1", "2"},
+    {"2", "1", "4", "1", "2", "1", "4", "1", "2", "1"},
+    {"1", "2", "3", "2", "1", "2", "3", "2", "1", "2"},
+    {"2", "1", "4", "1", "2", "1", "4", "1", "2", "1"},
+    {"1", "2", "3", "2", "1", "2", "3", "2", "1", "2"},
+    {"2", "1", "4", "1", "2", "1", "4", "1", "2", "1"},
+    {"1", "2", "3", "2", "1", "2", "3", "2", "1", "2"},
+    {"2", "1", "4", "1", "2", "1", "4", "1", "2", "1"},
+    {"1", "2", "3", "2", "1", "2", "3", "2", "1", "2"},
+    {"2", "1", "4", "1", "2", "1", "4", "1", "2", "1"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.6563673284207687`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"sInvariant", "[", 
+     RowBox[{"PD", "[", 
+      RowBox[{"b", "[", 
+       RowBox[{"4", ",", "n", ",", "k"}], "]"}], "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "1", ",", "5", ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "1", ",", "9", ",", "4"}], "}"}]}], "]"}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.6563700139489594`*^9, 3.656370033304933*^9}, {
+  3.656370110749651*^9, 3.656370114730227*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"2", "14", "26"},
+    {"0", "12", "24"},
+    {"0", "10", "22"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.65637002355149*^9, {3.656370107941328*^9, 3.656370120334433*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"sInvariant", "[", 
+     RowBox[{"PD", "[", 
+      RowBox[{"b", "[", 
+       RowBox[{"4", ",", "n", ",", "k"}], "]"}], "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "1", ",", "9", ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "1", ",", "5", ",", "4"}], "}"}]}], "]"}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.656369962400655*^9, 3.656370003919569*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"2", "14"},
+    {"0", "12"},
+    {"0", "10"},
+    {
+     RowBox[{"-", "2"}], "8"},
+    {
+     RowBox[{"-", "4"}], "6"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.656369980028798*^9, 3.6563700077477083`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"sInvariant", "[", 
+     RowBox[{"PD", "[", 
+      RowBox[{"b", "[", 
+       RowBox[{"4", ",", "n", ",", "k"}], "]"}], "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "2", ",", "5", ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "2", ",", "9", ",", "2"}], "}"}]}], "]"}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.6563700139489594`*^9, 3.656370033304933*^9}, {
+  3.656370110749651*^9, 3.656370139644331*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"4", "10", "16", "22"},
+    {"2", "8", "14", "20"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.65637002355149*^9, {3.656370107941328*^9, 3.656370120334433*^9}, 
+   3.6563701593836317`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"sInvariant", "[", 
+     RowBox[{"PD", "[", 
+      RowBox[{"b", "[", 
+       RowBox[{"4", ",", "n", ",", "k"}], "]"}], "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "2", ",", "14", ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "2", ",", "5", ",", "2"}], "}"}]}], "]"}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.656369962400655*^9, 3.656370003919569*^9}, {
+  3.6563702745820217`*^9, 3.656370277952067*^9}, {3.6563703102981853`*^9, 
+  3.656370311015294*^9}, {3.6563703441110363`*^9, 3.656370354692375*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"4", "10"},
+    {"2", "8"},
+    {"0", "6"},
+    {
+     RowBox[{"-", "2"}], "4"},
+    {
+     RowBox[{"-", "4"}], "2"},
+    {
+     RowBox[{"-", "6"}], "0"},
+    {
+     RowBox[{"-", "8"}], 
+     RowBox[{"-", "2"}]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.656369980028798*^9, 3.6563700077477083`*^9}, {
+  3.656370289693883*^9, 3.656370364922696*^9}}]
+}, Open  ]]
+},
+WindowSize->{1288, 913},
+WindowMargins->{{28, Automatic}, {Automatic, 64}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September 9, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 522, 12, 63, "Input"],
+Cell[1105, 36, 240, 5, 28, "Output"],
+Cell[1348, 43, 242, 4, 38, "Print"]
+}, Open  ]],
+Cell[1605, 50, 582, 17, 28, "Input"],
+Cell[CellGroupData[{
+Cell[2212, 71, 290, 6, 28, "Input"],
+Cell[2505, 79, 2899, 43, 155, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5441, 127, 322, 7, 28, "Input"],
+Cell[5766, 136, 195, 3, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5998, 144, 525, 14, 28, "Input"],
+Cell[6526, 160, 849, 26, 108, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7412, 191, 478, 13, 28, "Input"],
+Cell[7893, 206, 900, 27, 108, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8830, 238, 868, 19, 28, "Input"],
+Cell[9701, 259, 1008, 28, 108, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10746, 292, 575, 15, 28, "Input"],
+Cell[11324, 309, 1020, 35, 160, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12381, 349, 477, 13, 28, "Input"],
+Cell[12861, 364, 1030, 39, 194, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13928, 408, 813, 18, 28, "Input"],
+Cell[14744, 428, 795, 24, 108, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15576, 457, 527, 14, 28, "Input"],
+Cell[16106, 473, 875, 31, 160, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17018, 509, 497, 14, 28, "Input"],
+Cell[17518, 525, 1130, 25, 194, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18685, 555, 499, 14, 28, "Input"],
+Cell[19187, 571, 1106, 25, 194, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20330, 601, 527, 14, 28, "Input"],
+Cell[20860, 617, 661, 19, 74, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21558, 641, 476, 13, 28, "Input"],
+Cell[22037, 656, 695, 22, 108, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22769, 683, 527, 14, 28, "Input"],
+Cell[23299, 699, 677, 19, 58, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24013, 723, 627, 15, 28, "Input"],
+Cell[24643, 740, 837, 28, 142, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
